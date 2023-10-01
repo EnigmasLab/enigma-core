@@ -1,4 +1,4 @@
-export { default as InjectiveIcon } from './InjectiveIcon';
+export { default as EnigmaIcon } from './EnigmaIcon';
 export { default as BuildIcon } from './BuildIcon';
 export { default as NetworkIcon } from './NetworkIcon';
 export { default as CurrencyIcon } from './CurrencyIcon';

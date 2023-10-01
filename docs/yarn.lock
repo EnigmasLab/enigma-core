@@ -2870,7 +2870,7 @@ clean-stack@^2.0.0:
 cli-boxes@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/cli-boxes/-/cli-boxes-2.2.1.tgz"
-  integrity sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==
+  integrity sha512-y4coMcylgSCdVfuryiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==
 
 cli-boxes@^3.0.0:
   version "3.0.0"
@@ -3673,7 +3673,7 @@ events@^3.2.0:
 execa@^5.0.0:
   version "5.1.1"
   resolved "https://registry.npmjs.org/execa/-/execa-5.1.1.tgz"
-  integrity sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==
+  integrity sha512-8uSpZZocAZRBAPIEFURYj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==
   dependencies:
     cross-spawn "^7.0.3"
     get-stream "^6.0.0"

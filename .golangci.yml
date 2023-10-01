@@ -38,6 +38,6 @@ issues:
 run:
   tests: false
   skip-dirs:
-    - injective-chain/modules/peggy/testpeggy
-    - injective-chain/modules/exchange/testexchange
-    - injective-chain/modules/exchange/client/testutil
+    - enigma-chain/modules/peggy/testpeggy
+    - enigma-chain/modules/exchange/testexchange
+    - enigma-chain/modules/exchange/client/testutil

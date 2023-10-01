@@ -9,9 +9,9 @@ rm -fr $TS_BUILD_DIR && mkdir -p $TS_BUILD_DIR && cd $TS_BUILD_DIR
 mkdir -p proto
 
 printf "version: v1\ndirectories:\n  - proto\n  - third_party" > buf.work.yaml
-printf "version: v1\nname: buf.build/InjectiveLabs/injective-core\n" > proto/buf.yaml
+printf "version: v1\nname: buf.build/EnigmasLab/enigma-core\n" > proto/buf.yaml
 cp ../proto/buf.gen.ts.yaml proto/buf.gen.ts.yaml
-cp -r ../proto/injective proto/
+cp -r ../proto/enigma proto/
 
 # download third_party API definitions
 buf export buf.build/cosmos/cosmos-sdk:v0.47.0 --output=third_party
@@ -39,7 +39,7 @@ rm -fr $TS_BUILD_DIR
 # buf export https://github.com/CosmWasm/wasmd.git --exclude-imports --output=./third_party
 
 # # compile proto definitions
-# proto_dirs=$(find ./injective ./third_party -path -prune -o -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq)
+# proto_dirs=$(find ./enigma ./third_party -path -prune -o -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq)
 # for dir in $proto_dirs; do
 #   echo Generating $dir ...
 #   for file in $(find "${dir}" -maxdepth 1 -name '*.proto'); do

@@ -1,7 +1,7 @@
 {
   "name": "@injectivelabs/core-proto-ts",
   "version": "0.0.2",
-  "description": "Injective Chain API Query client with generated gRPC bindings.",
+  "description": "Enigma Chain API Query client with generated gRPC bindings.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,19 +10,19 @@
   "module": "./esm/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/InjectiveLabs/injective-core.git"
+    "url": "git+https://github.com/EnigmasLab/enigma-core.git"
   },
   "keywords": [
-    "injective-core",
+    "enigma-core",
     "grpc",
     "bindings"
   ],
-  "author": "Injective Labs",
+  "author": "Enigma Labs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/InjectiveLabs/injective-core/issues"
+    "url": "https://github.com/EnigmasLab/enigma-core/issues"
   },
-  "homepage": "https://github.com/InjectiveLabs/injective-core#readme",
+  "homepage": "https://github.com/EnigmasLab/enigma-core#readme",
   "dependencies": {
     "@injectivelabs/grpc-web": "^0.0.1",
     "google-protobuf": "^3.14.0",

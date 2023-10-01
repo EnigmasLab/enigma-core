@@ -1,20 +1,20 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Injective Chain - Legacy REST and gRPC Gateway docs",
+    "title": "Enigma Chain - Legacy REST and gRPC Gateway docs",
     "description": "A REST interface for state queries, legacy transactions",
     "version": "1.0.0"
   },
   "apis": [
     {
-      "url": "./tmp-swagger-gen/injective/exchange/v1beta1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/exchange/v1beta1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "ExchangeParams"
         }
       }
     },{
-      "url": "./tmp-swagger-gen/injective/wasmx/v1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/wasmx/v1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "WasmxParams"
@@ -22,7 +22,7 @@
       }
     },
     {
-      "url": "./tmp-swagger-gen/injective/ocr/v1beta1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/ocr/v1beta1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "OcrParams"
@@ -30,7 +30,7 @@
       }
     },
     {
-      "url": "./tmp-swagger-gen/injective/auction/v1beta1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/auction/v1beta1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "AuctionParams"
@@ -38,7 +38,7 @@
       }
     },
     {
-      "url": "./tmp-swagger-gen/injective/oracle/v1beta1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/oracle/v1beta1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "OracleParams"
@@ -46,7 +46,7 @@
       }
     },
     {
-      "url": "./tmp-swagger-gen/injective/insurance/v1beta1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/insurance/v1beta1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "InsuranceParams"
@@ -54,7 +54,7 @@
       }
     },
     {
-      "url": "./tmp-swagger-gen/injective/peggy/v1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/peggy/v1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "PeggyParams"
@@ -62,7 +62,7 @@
       }
     },
     {
-      "url": "./tmp-swagger-gen/injective/tokenfactory/v1beta1/query.swagger.json",
+      "url": "./tmp-swagger-gen/enigma/tokenfactory/v1beta1/query.swagger.json",
       "operationIds": {
         "rename": {
           "Params": "TokenfactoryParams"

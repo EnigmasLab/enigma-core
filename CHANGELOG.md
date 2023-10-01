@@ -19,29 +19,29 @@
 - bump wasmd version
 - update peggy blacklist with latest addresses
 - re-gen
-- fix logging format ([#878](https://github.com/InjectiveLabs/injective-core/issues/878))
-- use info instead of error level for common error logs ([#876](https://github.com/InjectiveLabs/injective-core/issues/876))
+- fix logging format ([#878](https://github.com/EnigmasLab/enigma-core/issues/878))
+- use info instead of error level for common error logs ([#876](https://github.com/EnigmasLab/enigma-core/issues/876))
 - update upgrade tests
 - remove unused ica arg for upgrade handler
-- update to latest Mito contracts ([#844](https://github.com/InjectiveLabs/injective-core/issues/844))
-- add node version name ([#846](https://github.com/InjectiveLabs/injective-core/issues/846))
-- upgrade third party packages to latest versions ([#833](https://github.com/InjectiveLabs/injective-core/issues/833))
+- update to latest Mito contracts ([#844](https://github.com/EnigmasLab/enigma-core/issues/844))
+- add node version name ([#846](https://github.com/EnigmasLab/enigma-core/issues/846))
+- upgrade third party packages to latest versions ([#833](https://github.com/EnigmasLab/enigma-core/issues/833))
 - exclude huge upgrade test dir from docker build
 - fix peggy typo
 - various cleanups to remove mention of legacy EVM stuff
-- add version LDFLAGS ([#799](https://github.com/InjectiveLabs/injective-core/issues/799)) ([#821](https://github.com/InjectiveLabs/injective-core/issues/821))
-- add version LDFLAGS ([#799](https://github.com/InjectiveLabs/injective-core/issues/799))
+- add version LDFLAGS ([#799](https://github.com/EnigmasLab/enigma-core/issues/799)) ([#821](https://github.com/EnigmasLab/enigma-core/issues/821))
+- add version LDFLAGS ([#799](https://github.com/EnigmasLab/enigma-core/issues/799))
 
 ### Feat
 
 - rename RegisterAsDMM to RewardsOptOut
-- refactor of RO logic ([#886](https://github.com/InjectiveLabs/injective-core/issues/886))
-- implement up to cancel amount query ([#864](https://github.com/InjectiveLabs/injective-core/issues/864))
+- refactor of RO logic ([#886](https://github.com/EnigmasLab/enigma-core/issues/886))
+- implement up to cancel amount query ([#864](https://github.com/EnigmasLab/enigma-core/issues/864))
 - add upgrade handler for v1.7 upgrade
-- Return error flags for batch order creation failures ([#857](https://github.com/InjectiveLabs/injective-core/issues/857))
-- add subaccount orders query ([#859](https://github.com/InjectiveLabs/injective-core/issues/859))
+- Return error flags for batch order creation failures ([#857](https://github.com/EnigmasLab/enigma-core/issues/857))
+- add subaccount orders query ([#859](https://github.com/EnigmasLab/enigma-core/issues/859))
 - add indexer exchange, chronos k8s config
-- implement transient spot order query ([#845](https://github.com/InjectiveLabs/injective-core/issues/845))
+- implement transient spot order query ([#845](https://github.com/EnigmasLab/enigma-core/issues/845))
 - Fixtures invariant checks
 
 ### Fix
@@ -52,16 +52,16 @@
 - use same ctx for conditional market order trigger
 - use same context for triggering conditional limit orders + event
 - bad merge
-- allow to deposit full amount to subaccount in Peggy ([#894](https://github.com/InjectiveLabs/injective-core/issues/894))
-- use correct fee values in events ([#891](https://github.com/InjectiveLabs/injective-core/issues/891))
-- use latest wasmd version with event attribute determinism fix ([#875](https://github.com/InjectiveLabs/injective-core/issues/875))
-- add spot negative maker fee event bug fix ([#868](https://github.com/InjectiveLabs/injective-core/issues/868))
+- allow to deposit full amount to subaccount in Peggy ([#894](https://github.com/EnigmasLab/enigma-core/issues/894))
+- use correct fee values in events ([#891](https://github.com/EnigmasLab/enigma-core/issues/891))
+- use latest wasmd version with event attribute determinism fix ([#875](https://github.com/EnigmasLab/enigma-core/issues/875))
+- add spot negative maker fee event bug fix ([#868](https://github.com/EnigmasLab/enigma-core/issues/868))
 - delete denom decimals in upgrade handler
-- use 0x prefixed hash representation in queries ([#861](https://github.com/InjectiveLabs/injective-core/issues/861))
+- use 0x prefixed hash representation in queries ([#861](https://github.com/EnigmasLab/enigma-core/issues/861))
 - remove legacy Kovan chainID support
 - allow zero fee discount value
 - old registerUpgradeHandlers denomDecimals fix
-- chain stresser fixes ([#823](https://github.com/InjectiveLabs/injective-core/issues/823))
+- chain stresser fixes ([#823](https://github.com/EnigmasLab/enigma-core/issues/823))
 
 ### Refactor
 
@@ -69,7 +69,7 @@
 
 ### Test
 
-- fuzz tests additions + improvements ([#789](https://github.com/InjectiveLabs/injective-core/issues/789))
+- fuzz tests additions + improvements ([#789](https://github.com/EnigmasLab/enigma-core/issues/789))
 
 ### Update
 
@@ -99,49 +99,49 @@
 
 ### Chore
 
-- add version LDFLAGS ([#799](https://github.com/InjectiveLabs/injective-core/issues/799)) ([#821](https://github.com/InjectiveLabs/injective-core/issues/821)) ([#822](https://github.com/InjectiveLabs/injective-core/issues/822))
-- fix deactivate capitalization ([#815](https://github.com/InjectiveLabs/injective-core/issues/815))
+- add version LDFLAGS ([#799](https://github.com/EnigmasLab/enigma-core/issues/799)) ([#821](https://github.com/EnigmasLab/enigma-core/issues/821)) ([#822](https://github.com/EnigmasLab/enigma-core/issues/822))
+- fix deactivate capitalization ([#815](https://github.com/EnigmasLab/enigma-core/issues/815))
 - add force settlement subcommand to command handler
 - add fee rates relation check in MsgInstantBinaryOptionsMarketLaunch
 - Post only tests - PR fixes
 - minor refactor
 - cleanup prints and comments
 - add minor code re-formatting
-- add denom decimals to upgrade handler ([#779](https://github.com/InjectiveLabs/injective-core/issues/779))
+- add denom decimals to upgrade handler ([#779](https://github.com/EnigmasLab/enigma-core/issues/779))
 - add copy proto file script to sdk-go script
 - minor refactor to use GetDerivativeOrBinaryOptionsMarketWithMarkPrice
 - return err
 - - [@injectivelabs](https://github.com/injectivelabs)/chain-api[@1](https://github.com/1).8.0-rc2
 - add provider type to exchange
-- bump wasmd v0.27.0-inj, wasmvm v1.0.0
+- bump wasmd v0.27.0-fury, wasmvm v1.0.0
 - rename wasm vault script
-- increment subaccount nonce early ([#702](https://github.com/InjectiveLabs/injective-core/issues/702))
-- bump tendermint protos to v0.34.19 ([#694](https://github.com/InjectiveLabs/injective-core/issues/694))
-- bump cosmos-sdk v0.45.4 ([#693](https://github.com/InjectiveLabs/injective-core/issues/693))
-- bump cosmos proto files ([#687](https://github.com/InjectiveLabs/injective-core/issues/687))
-- Add minor refactors to Wasm Script ([#685](https://github.com/InjectiveLabs/injective-core/issues/685))
-- remove auction keeper from exchange keeper ([#679](https://github.com/InjectiveLabs/injective-core/issues/679))
+- increment subaccount nonce early ([#702](https://github.com/EnigmasLab/enigma-core/issues/702))
+- bump tendermint protos to v0.34.19 ([#694](https://github.com/EnigmasLab/enigma-core/issues/694))
+- bump cosmos-sdk v0.45.4 ([#693](https://github.com/EnigmasLab/enigma-core/issues/693))
+- bump cosmos proto files ([#687](https://github.com/EnigmasLab/enigma-core/issues/687))
+- Add minor refactors to Wasm Script ([#685](https://github.com/EnigmasLab/enigma-core/issues/685))
+- remove auction keeper from exchange keeper ([#679](https://github.com/EnigmasLab/enigma-core/issues/679))
 - bump ibc-go/v2 v2.2.0
-- bump cosmos-sdk v0.45.2-inj
-- add CLI support for PO order type in spot & deriv limit orders ([#653](https://github.com/InjectiveLabs/injective-core/issues/653))
+- bump cosmos-sdk v0.45.2-fury
+- add CLI support for PO order type in spot & deriv limit orders ([#653](https://github.com/EnigmasLab/enigma-core/issues/653))
 - upd docker-compose
 - import exchange types only once in test
 
 ### Docs
 
-- add CHANGELOG file ([#800](https://github.com/InjectiveLabs/injective-core/issues/800))
+- add CHANGELOG file ([#800](https://github.com/EnigmasLab/enigma-core/issues/800))
 - fixes
-- update dev to latest ([#677](https://github.com/InjectiveLabs/injective-core/issues/677))
+- update dev to latest ([#677](https://github.com/EnigmasLab/enigma-core/issues/677))
 
 ### Feat
 
-- Add MsgRegisterAsDMM ([#662](https://github.com/InjectiveLabs/injective-core/issues/662))
+- Add MsgRegisterAsDMM ([#662](https://github.com/EnigmasLab/enigma-core/issues/662))
 
 ### Feat
 
-- add license for open sourcing ([#814](https://github.com/InjectiveLabs/injective-core/issues/814))
+- add license for open sourcing ([#814](https://github.com/EnigmasLab/enigma-core/issues/814))
 - add binary options launch/update and denom update in BatchExchangeModificationProposal
-- add denom decimals ([#781](https://github.com/InjectiveLabs/injective-core/issues/781))
+- add denom decimals ([#781](https://github.com/EnigmasLab/enigma-core/issues/781))
 - Post only tests - added fixture tests for spot markets
 - set architecture automatically
 - add support for M1 build in DockerFile
@@ -153,54 +153,54 @@
 - Negative maker fees - tests (wip)
 - Negative maker fees - tests (wip)
 - Negative maker fees - tests (wip)
-- Account Msg Server batch processing - added binary options ([#750](https://github.com/InjectiveLabs/injective-core/issues/750))
-- add new update sdk go script ([#744](https://github.com/InjectiveLabs/injective-core/issues/744))
-- add inj-to-subaccount CLI method
-- change midprice to midprice and tob query ([#736](https://github.com/InjectiveLabs/injective-core/issues/736))
-- Added CLI methods for oracle providers ([#734](https://github.com/InjectiveLabs/injective-core/issues/734))
-- Add new Mito grpc query to show all contracts ([#731](https://github.com/InjectiveLabs/injective-core/issues/731))
-- Oracle Provider - unit tests, fixed some bugs ([#721](https://github.com/InjectiveLabs/injective-core/issues/721))
-- improve spot matching algorithm ([#713](https://github.com/InjectiveLabs/injective-core/issues/713))
+- Account Msg Server batch processing - added binary options ([#750](https://github.com/EnigmasLab/enigma-core/issues/750))
+- add new update sdk go script ([#744](https://github.com/EnigmasLab/enigma-core/issues/744))
+- add fury-to-subaccount CLI method
+- change midprice to midprice and tob query ([#736](https://github.com/EnigmasLab/enigma-core/issues/736))
+- Added CLI methods for oracle providers ([#734](https://github.com/EnigmasLab/enigma-core/issues/734))
+- Add new Mito grpc query to show all contracts ([#731](https://github.com/EnigmasLab/enigma-core/issues/731))
+- Oracle Provider - unit tests, fixed some bugs ([#721](https://github.com/EnigmasLab/enigma-core/issues/721))
+- improve spot matching algorithm ([#713](https://github.com/EnigmasLab/enigma-core/issues/713))
 - add oracle wasm query capability (only volatility)
 - provider oracle
 - add spot vault test script
 - add wasm spot orders query
-- add mid price queries ([#703](https://github.com/InjectiveLabs/injective-core/issues/703))
-- new synthetic derivative trade flow ([#683](https://github.com/InjectiveLabs/injective-core/issues/683))
-- Update maker pools with MITO master functionality ([#680](https://github.com/InjectiveLabs/injective-core/issues/680))
-- Cosmwasm integration ([#607](https://github.com/InjectiveLabs/injective-core/issues/607))
+- add mid price queries ([#703](https://github.com/EnigmasLab/enigma-core/issues/703))
+- new synthetic derivative trade flow ([#683](https://github.com/EnigmasLab/enigma-core/issues/683))
+- Update maker pools with MITO master functionality ([#680](https://github.com/EnigmasLab/enigma-core/issues/680))
+- Cosmwasm integration ([#607](https://github.com/EnigmasLab/enigma-core/issues/607))
 - add rollback capabilities
 
 ### Feature
 
-- Use new FBA limit clearing price ([#646](https://github.com/InjectiveLabs/injective-core/issues/646))
+- Use new FBA limit clearing price ([#646](https://github.com/EnigmasLab/enigma-core/issues/646))
 
 ### Fix
 
 - release GH workflow
 - add nil check in matching
-- add ICA controller and host storekey + migration code ([#805](https://github.com/InjectiveLabs/injective-core/issues/805))
-- make trading reward points based on volume, not fee contribution ([#802](https://github.com/InjectiveLabs/injective-core/issues/802))
+- add ICA controller and host storekey + migration code ([#805](https://github.com/EnigmasLab/enigma-core/issues/805))
+- make trading reward points based on volume, not fee contribution ([#802](https://github.com/EnigmasLab/enigma-core/issues/802))
 - add missing coma
-- allow negative maker fees in instant perp/binary/futures market launches ([#797](https://github.com/InjectiveLabs/injective-core/issues/797))
-- denom decimals setup + unmarshalling fix ([#796](https://github.com/InjectiveLabs/injective-core/issues/796))
+- allow negative maker fees in instant perp/binary/futures market launches ([#797](https://github.com/EnigmasLab/enigma-core/issues/797))
+- denom decimals setup + unmarshalling fix ([#796](https://github.com/EnigmasLab/enigma-core/issues/796))
 - binary options fixtures
-- change UST to USTC ([#787](https://github.com/InjectiveLabs/injective-core/issues/787))
+- change UST to USTC ([#787](https://github.com/EnigmasLab/enigma-core/issues/787))
 - use copy of value in closure
 - binary options post-trade margining fix
 - return correct margin needed
-- change Kovan chainID to Goerli ([#727](https://github.com/InjectiveLabs/injective-core/issues/727))
+- change Kovan chainID to Goerli ([#727](https://github.com/EnigmasLab/enigma-core/issues/727))
 - add Route to MsgBatchCancelBinaryOptionsOrders
-- add denom decimals for fixing volatility precision loss + few other fixes ([#778](https://github.com/InjectiveLabs/injective-core/issues/778))
-- add missing market order validation for netting ([#767](https://github.com/InjectiveLabs/injective-core/issues/767))
-- use insurance fund in TEF settlements ([#761](https://github.com/InjectiveLabs/injective-core/issues/761))
-- margin hold should only be based on positive fee rate part ([#758](https://github.com/InjectiveLabs/injective-core/issues/758))
-- remove redundant vesting CLI command ([#754](https://github.com/InjectiveLabs/injective-core/issues/754))
-- add spot wasm script fixes from Peiyun ([#745](https://github.com/InjectiveLabs/injective-core/issues/745))
-- wasmx tx example ([#742](https://github.com/InjectiveLabs/injective-core/issues/742))
+- add denom decimals for fixing volatility precision loss + few other fixes ([#778](https://github.com/EnigmasLab/enigma-core/issues/778))
+- add missing market order validation for netting ([#767](https://github.com/EnigmasLab/enigma-core/issues/767))
+- use insurance fund in TEF settlements ([#761](https://github.com/EnigmasLab/enigma-core/issues/761))
+- margin hold should only be based on positive fee rate part ([#758](https://github.com/EnigmasLab/enigma-core/issues/758))
+- remove redundant vesting CLI command ([#754](https://github.com/EnigmasLab/enigma-core/issues/754))
+- add spot wasm script fixes from Peiyun ([#745](https://github.com/EnigmasLab/enigma-core/issues/745))
+- wasmx tx example ([#742](https://github.com/EnigmasLab/enigma-core/issues/742))
 - panic if error is not nil
-- add fixes for negative maker fee markets with fee discounts ([#730](https://github.com/InjectiveLabs/injective-core/issues/730))
-- run peggy module endblocker before exchange module endblocker ([#726](https://github.com/InjectiveLabs/injective-core/issues/726))
+- add fixes for negative maker fee markets with fee discounts ([#730](https://github.com/EnigmasLab/enigma-core/issues/730))
+- run peggy module endblocker before exchange module endblocker ([#726](https://github.com/EnigmasLab/enigma-core/issues/726))
 - minor comments and error type
 - remove redundant rosetta cmd
 - nil dereference check, array length vs capacity fix
@@ -211,7 +211,7 @@
 - pass parameters as nil if not used in cli
 - use optional decimal flag helper
 - dont pass default values in cli
-- use InjectiveLabs/cosmos-sdk v0.45.0-inj-2 ([#636](https://github.com/InjectiveLabs/injective-core/issues/636))
+- use EnigmasLab/cosmos-sdk v0.45.0-fury-2 ([#636](https://github.com/EnigmasLab/enigma-core/issues/636))
 
 ### Test
 
@@ -219,7 +219,7 @@
 
 ### Tmp
 
-- re-enable kovan ([#804](https://github.com/InjectiveLabs/injective-core/issues/804))
+- re-enable kovan ([#804](https://github.com/EnigmasLab/enigma-core/issues/804))
 
 <a name="v1.1.3-test"></a>
 
@@ -239,12 +239,12 @@
 - add cosmwasm proto files and swagger
 - bump CosmWasm/wasmd v0.23.0 + regen
 - add cosmwasm proto files and swagger
-- bump cosmos-sdk v0.45.0-injective ([#621](https://github.com/InjectiveLabs/injective-core/issues/621))
+- bump cosmos-sdk v0.45.0-enigma ([#621](https://github.com/EnigmasLab/enigma-core/issues/621))
 - add authz, tendermint query and params to swagger
 - add authz, tendermint query and params to swagger
 - add cosmwasm proto files and swagger
 - nuke hi.json
-- re-gen ([#603](https://github.com/InjectiveLabs/injective-core/issues/603))
+- re-gen ([#603](https://github.com/EnigmasLab/enigma-core/issues/603))
 - simplify hex string validation
 - add logs
 - format proto files
@@ -306,19 +306,19 @@
 
 ### Feat
 
-- Add fee discount tier stats GRPC query ([#626](https://github.com/InjectiveLabs/injective-core/issues/626))
-- Implement vested trading rewards ([#610](https://github.com/InjectiveLabs/injective-core/issues/610))
-- Add new grpc balance queries ([#601](https://github.com/InjectiveLabs/injective-core/issues/601))
+- Add fee discount tier stats GRPC query ([#626](https://github.com/EnigmasLab/enigma-core/issues/626))
+- Implement vested trading rewards ([#610](https://github.com/EnigmasLab/enigma-core/issues/610))
+- Add new grpc balance queries ([#601](https://github.com/EnigmasLab/enigma-core/issues/601))
 
 ### Fix
 
 - fix the proof of concept market making integration
 - add wasm module to begin, end block order
-- correctly iterate over pending pools in grpc query ([#620](https://github.com/InjectiveLabs/injective-core/issues/620))
-- use correct InjRewardStakedRequirementThreshold in migration
-- add IBC antehandler ([#612](https://github.com/InjectiveLabs/injective-core/issues/612))
+- correctly iterate over pending pools in grpc query ([#620](https://github.com/EnigmasLab/enigma-core/issues/620))
+- use correct FuryRewardStakedRequirementThreshold in migration
+- add IBC antehandler ([#612](https://github.com/EnigmasLab/enigma-core/issues/612))
 - emit correct trade type for trade event during settlement
-- register TradingRewardPointsUpdateProposal properly in codec ([#602](https://github.com/InjectiveLabs/injective-core/issues/602))
+- register TradingRewardPointsUpdateProposal properly in codec ([#602](https://github.com/EnigmasLab/enigma-core/issues/602))
 - use correct transient spot limit orders inside transient store
 - use correct order for cancel orders
 - additional validation for MsgBatchUpdateOrders
@@ -344,9 +344,9 @@
 
 ### Fix
 
-- Add fix for fee discount proposal bug ([#615](https://github.com/InjectiveLabs/injective-core/issues/615))
-- Add some minor edge case liquidation fixes ([#614](https://github.com/InjectiveLabs/injective-core/issues/614))
-- Add fixes for GRPC balance mismatch queries ([#609](https://github.com/InjectiveLabs/injective-core/issues/609))
+- Add fix for fee discount proposal bug ([#615](https://github.com/EnigmasLab/enigma-core/issues/615))
+- Add some minor edge case liquidation fixes ([#614](https://github.com/EnigmasLab/enigma-core/issues/614))
+- Add fixes for GRPC balance mismatch queries ([#609](https://github.com/EnigmasLab/enigma-core/issues/609))
 
 ### Refactor
 
@@ -359,7 +359,7 @@
 
 ### Test
 
-- finish batch update tests ([#600](https://github.com/InjectiveLabs/injective-core/issues/600))
+- finish batch update tests ([#600](https://github.com/EnigmasLab/enigma-core/issues/600))
 - add transient order tests for batch update tests
 - add batch order cancellation tests
 - add proper logging for cancelling orders in all markets test
@@ -401,7 +401,7 @@
 ### Fix
 
 - use correct clearing price for edge case with far off-priced limit orders
-- refund correct amount for negative maker fee derivative markets upon order cancellations ([#544](https://github.com/InjectiveLabs/injective-core/issues/544))
+- refund correct amount for negative maker fee derivative markets upon order cancellations ([#544](https://github.com/EnigmasLab/enigma-core/issues/544))
 
 ### Test
 
@@ -424,8 +424,8 @@
 - bump go.mod golang version to 1.17
 - fix oracle tests
 - bump cosmos-sdk
-- fix comments, closes https://github.com/InjectiveLabs/injective-core/issues/496
-- Add minor reduce only cancellation and fuzz test refactors ([#489](https://github.com/InjectiveLabs/injective-core/issues/489))
+- fix comments, closes https://github.com/EnigmasLab/enigma-core/issues/496
+- Add minor reduce only cancellation and fuzz test refactors ([#489](https://github.com/EnigmasLab/enigma-core/issues/489))
 - add liquitity mining reward distribution tests
 - bump ibc-go
 - remove old genesis dir
@@ -436,33 +436,33 @@
 
 ### Feat
 
-- allow for changing oracle params in deriv markets, nuke Derivat… ([#520](https://github.com/InjectiveLabs/injective-core/issues/520))
-- BatchExchangeModificationProposal ([#519](https://github.com/InjectiveLabs/injective-core/issues/519))
+- allow for changing oracle params in deriv markets, nuke Derivat… ([#520](https://github.com/EnigmasLab/enigma-core/issues/520))
+- BatchExchangeModificationProposal ([#519](https://github.com/EnigmasLab/enigma-core/issues/519))
 - add events for fee discounts and trading rewards
-- add inj-address-from-eth-address query method
+- add fury-address-from-eth-address query method
 - add order hash in create market order response
-- initial negative derivative maker fee implementation ([#476](https://github.com/InjectiveLabs/injective-core/issues/476))
-- return useful order info upon sending exchange Msg ([#468](https://github.com/InjectiveLabs/injective-core/issues/468))
+- initial negative derivative maker fee implementation ([#476](https://github.com/EnigmasLab/enigma-core/issues/476))
+- return useful order info upon sending exchange Msg ([#468](https://github.com/EnigmasLab/enigma-core/issues/468))
 
 ### Feature
 
-- Only check past fees paid when first period has passed ([#513](https://github.com/InjectiveLabs/injective-core/issues/513))
-- Add liquidity mining scheduling system ([#500](https://github.com/InjectiveLabs/injective-core/issues/500))
-- Send market launch fees to Community Spend Pool ([#486](https://github.com/InjectiveLabs/injective-core/issues/486))
-- implement derivative transient order cancels ([#483](https://github.com/InjectiveLabs/injective-core/issues/483))
+- Only check past fees paid when first period has passed ([#513](https://github.com/EnigmasLab/enigma-core/issues/513))
+- Add liquidity mining scheduling system ([#500](https://github.com/EnigmasLab/enigma-core/issues/500))
+- Send market launch fees to Community Spend Pool ([#486](https://github.com/EnigmasLab/enigma-core/issues/486))
+- implement derivative transient order cancels ([#483](https://github.com/EnigmasLab/enigma-core/issues/483))
 
 ### Fix
 
-- Set past trading fees for fee discounts correctly ([#527](https://github.com/InjectiveLabs/injective-core/issues/527))
+- Set past trading fees for fee discounts correctly ([#527](https://github.com/EnigmasLab/enigma-core/issues/527))
 
 ### Fix
 
-- allow derivative market launches with negative maker fee ([#539](https://github.com/InjectiveLabs/injective-core/issues/539))
-- count negative maker fees with negative multiplier in spot ([#534](https://github.com/InjectiveLabs/injective-core/issues/534))
+- allow derivative market launches with negative maker fee ([#539](https://github.com/EnigmasLab/enigma-core/issues/539))
+- count negative maker fees with negative multiplier in spot ([#534](https://github.com/EnigmasLab/enigma-core/issues/534))
 - add IsFirstCycle to genesis and refactor to TrueByte in keeper
 - add missing set for market fee discount qualification upon launch
 - set flag once first fee cycle is finished instead of using bucket timestamps
-- cap insurance fund underwriting to 1T \* 1e18 for overflow protection ([#532](https://github.com/InjectiveLabs/injective-core/issues/532))
+- cap insurance fund underwriting to 1T \* 1e18 for overflow protection ([#532](https://github.com/EnigmasLab/enigma-core/issues/532))
 - show correct tier when first bucket period is not over
 - FeeDiscountAccountInfo query
 - FeeDiscountAccountInfo query
@@ -476,23 +476,23 @@
 - replaced new logo
 - exchange CLI fix
 - CLI tx NewSpotMarketUpdateParamsProposalTxCmd
-- only update deposits for vanilla orders ([#463](https://github.com/InjectiveLabs/injective-core/issues/463))
-- CumulativeFundingEntry fix ([#460](https://github.com/InjectiveLabs/injective-core/issues/460))
+- only update deposits for vanilla orders ([#463](https://github.com/EnigmasLab/enigma-core/issues/463))
+- CumulativeFundingEntry fix ([#460](https://github.com/EnigmasLab/enigma-core/issues/460))
 - add missing RegisterTendermintService
 - missing legacy amino codec hooks
 
 ### OCR
 
-- fix onchain config ([#535](https://github.com/InjectiveLabs/injective-core/issues/535))
+- fix onchain config ([#535](https://github.com/EnigmasLab/enigma-core/issues/535))
 
 ### Refactor
 
-- use sdk.AccAddress ([#524](https://github.com/InjectiveLabs/injective-core/issues/524))
+- use sdk.AccAddress ([#524](https://github.com/EnigmasLab/enigma-core/issues/524))
 - added favicon
 
 ### Test
 
-- make market param updates valid for fuzz tests ([#543](https://github.com/InjectiveLabs/injective-core/issues/543))
+- make market param updates valid for fuzz tests ([#543](https://github.com/EnigmasLab/enigma-core/issues/543))
 - adapt fee discount tests to new fee cycle mechanism
 - fix test for multiple funding epochs
 
@@ -524,14 +524,14 @@
 
 - update the CanaryV2Block height
 - cleanup dead peggy key code
-- test entire module instead of just keeper ([#422](https://github.com/InjectiveLabs/injective-core/issues/422))
+- test entire module instead of just keeper ([#422](https://github.com/EnigmasLab/enigma-core/issues/422))
 
 ### Fix
 
-- use notional in funding payment calculation ([#433](https://github.com/InjectiveLabs/injective-core/issues/433))
-- log level, closes https://github.com/InjectiveLabs/injective-core/issues/419 ([#425](https://github.com/InjectiveLabs/injective-core/issues/425))
+- use notional in funding payment calculation ([#433](https://github.com/EnigmasLab/enigma-core/issues/433))
+- log level, closes https://github.com/EnigmasLab/enigma-core/issues/419 ([#425](https://github.com/EnigmasLab/enigma-core/issues/425))
 - re-enable fuzz tests
-- use correct Bech32 fee recipient while supporting legacy canary chain misimplementation ([#420](https://github.com/InjectiveLabs/injective-core/issues/420))
+- use correct Bech32 fee recipient while supporting legacy canary chain misimplementation ([#420](https://github.com/EnigmasLab/enigma-core/issues/420))
 
 <a name="v1.0.2"></a>
 
@@ -563,21 +563,21 @@
 
 ### Peggy
 
-- MsgSubmitBadSignatureEvidence - no signer [#366](https://github.com/InjectiveLabs/injective-core/issues/366)
+- MsgSubmitBadSignatureEvidence - no signer [#366](https://github.com/EnigmasLab/enigma-core/issues/366)
 
-[unreleased]: https://github.com/InjectiveLabs/injective-core/compare/v...HEAD
-[v]: https://github.com/InjectiveLabs/injective-core/compare/v1.7...v
-[v1.7]: https://github.com/InjectiveLabs/injective-core/compare/v1.6...v1.7
-[v1.6]: https://github.com/InjectiveLabs/injective-core/compare/v1.1.3-test...v1.6
-[v1.1.3-test]: https://github.com/InjectiveLabs/injective-core/compare/v1.1.2...v1.1.3-test
-[v1.1.2]: https://github.com/InjectiveLabs/injective-core/compare/v1.1.1...v1.1.2
-[v1.1.1]: https://github.com/InjectiveLabs/injective-core/compare/v1.1.0...v1.1.1
-[v1.1.0]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.7...v1.1.0
-[v1.0.7]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.6...v1.0.7
-[v1.0.6]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.5...v1.0.6
-[v1.0.5]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.4...v1.0.5
-[v1.0.4]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.3...v1.0.4
-[v1.0.3]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.2...v1.0.3
-[v1.0.2]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.1...v1.0.2
-[v1.0.1]: https://github.com/InjectiveLabs/injective-core/compare/v1.0.0...v1.0.1
-[v1.0.0]: https://github.com/InjectiveLabs/injective-core/compare/v1.0...v1.0.0
+[unreleased]: https://github.com/EnigmasLab/enigma-core/compare/v...HEAD
+[v]: https://github.com/EnigmasLab/enigma-core/compare/v1.7...v
+[v1.7]: https://github.com/EnigmasLab/enigma-core/compare/v1.6...v1.7
+[v1.6]: https://github.com/EnigmasLab/enigma-core/compare/v1.1.3-test...v1.6
+[v1.1.3-test]: https://github.com/EnigmasLab/enigma-core/compare/v1.1.2...v1.1.3-test
+[v1.1.2]: https://github.com/EnigmasLab/enigma-core/compare/v1.1.1...v1.1.2
+[v1.1.1]: https://github.com/EnigmasLab/enigma-core/compare/v1.1.0...v1.1.1
+[v1.1.0]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.7...v1.1.0
+[v1.0.7]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.6...v1.0.7
+[v1.0.6]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.5...v1.0.6
+[v1.0.5]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.4...v1.0.5
+[v1.0.4]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.3...v1.0.4
+[v1.0.3]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.2...v1.0.3
+[v1.0.2]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.1...v1.0.2
+[v1.0.1]: https://github.com/EnigmasLab/enigma-core/compare/v1.0.0...v1.0.1
+[v1.0.0]: https://github.com/EnigmasLab/enigma-core/compare/v1.0...v1.0.0

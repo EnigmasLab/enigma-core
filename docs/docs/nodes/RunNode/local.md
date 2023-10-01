@@ -5,7 +5,7 @@ title: Local Node
 
 # Set Up and Run a Node in a Local Private Network
 
-Now that the application is ready and the keyring populated, it's time to see how to locally run an Injective node. This guide will walk you through setting up a standalone network locally, if you wish to join as a validator on Mainnet or Testnet, please follow the relevant guides [here](../../develop/guides/).
+Now that the application is ready and the keyring populated, it's time to see how to locally run an Enigma node. This guide will walk you through setting up a standalone network locally, if you wish to join as a validator on Mainnet or Testnet, please follow the relevant guides [here](../../develop/guides/).
 
 ## Initialize the Chain
 
@@ -13,15 +13,15 @@ Before actually running the node, we need to initialize the chain, and most impo
 
 ```bash
 # The argument <moniker> is the custom username of your node, it should be human-readable.
-injectived init <moniker> --chain-id injective-1
+enigmad init <moniker> --chain-id enigma-1
 ```
 
-The command above creates all the configuration files needed for your node to run, as well as a default genesis file, which defines the initial state of the network. All these configuration files are in `~/.injectived` by default, but you can overwrite the location of this folder by passing the `--home` flag.
+The command above creates all the configuration files needed for your node to run, as well as a default genesis file, which defines the initial state of the network. All these configuration files are in `~/.enigmad` by default, but you can overwrite the location of this folder by passing the `--home` flag.
 
-The `~/.injectived` folder has the following structure:
+The `~/.enigmad` folder has the following structure:
 
 ```bash
-.                                   # ~/.injectived
+.                                   # ~/.enigmad
   |- data                           # Contains the databases used by the node.
   |- config/
       |- app.toml                   # Application-related configuration file.
@@ -33,52 +33,52 @@ The `~/.injectived` folder has the following structure:
 
 Before starting the chain, you need to populate the state with at least one account. To do so, first [create a new account in the keyring](./keyring.md#adding-keys-to-the-keyring) named `my_validator` under the `test` keyring backend (feel free to choose another name and another backend).
 
-Now that you have created a local account, go ahead and grant it some `inj` tokens in your chain's genesis file. Doing so will also make sure your chain is aware of this account's existence:
+Now that you have created a local account, go ahead and grant it some `fury` tokens in your chain's genesis file. Doing so will also make sure your chain is aware of this account's existence:
 
 ```bash
-injectived add-genesis-account $MY_VALIDATOR_ADDRESS 100000000000inj
+enigmad add-genesis-account $MY_VALIDATOR_ADDRESS 100000000000fury
 ```
 
-Recall that `$MY_VALIDATOR_ADDRESS` is a variable that holds the address of the `my_validator` key in the [keyring](./keyring.md#adding-keys-to-the-keyring). Token in the Injective Chain have the `{amount}{denom}` format: `amount` is an 18-digit-precision decimal number, and `denom` is the unique token identifier with its denomination key (e.g. `inj`). Here, we are granting `inj` tokens, as `inj` is the token identifier used for staking in `injectived`.
+Recall that `$MY_VALIDATOR_ADDRESS` is a variable that holds the address of the `my_validator` key in the [keyring](./keyring.md#adding-keys-to-the-keyring). Token in the Enigma Chain have the `{amount}{denom}` format: `amount` is an 18-digit-precision decimal number, and `denom` is the unique token identifier with its denomination key (e.g. `fury`). Here, we are granting `fury` tokens, as `fury` is the token identifier used for staking in `enigmad`.
 
 Now that your account has some tokens, you need to add a validator to your chain. Validators are special full-nodes that participate in the consensus process in order to add new blocks to the chain. Any account can declare its intention to become a validator operator, but only those with sufficient delegation get to enter the active set. For this guide, you will add your local node (created via the `init` command above) as a validator of your chain. Validators can be declared before a chain is first started via a special transaction included in the genesis file called a `gentx`:
 
 ```bash
 # Create a gentx.
-injectived gentx my_validator 100000000inj --chain-id=injective-1 --keyring-backend=file
+enigmad gentx my_validator 100000000fury --chain-id=enigma-1 --keyring-backend=file
 
 # Add the gentx to the genesis file.
-injectived collect-gentxs
+enigmad collect-gentxs
 ```
 
 A `gentx` does three things:
 
 1. Registers the `validator` account you created as a validator operator account (i.e. the account that controls the validator).
 2. Self-delegates the provided `amount` of staking tokens.
-3. Link the operator account with a Tendermint node pubkey that will be used for signing blocks. If no `--pubkey` flag is provided, it defaults to the local node pubkey created via the `injectived init` command above.
+3. Link the operator account with a Tendermint node pubkey that will be used for signing blocks. If no `--pubkey` flag is provided, it defaults to the local node pubkey created via the `enigmad init` command above.
 
 For more information on `gentx`, use the following command:
 
 ```bash
-injectived gentx --help
+enigmad gentx --help
 ```
 
 ## Configuring the Node Using `app.toml` and `config.toml`
 
-Two configuration files are automatically generated inside `~/.injectived/config`:
+Two configuration files are automatically generated inside `~/.enigmad/config`:
 
 - `config.toml`: used to configure Tendermint, learn more on [Tendermint's documentation](https://docs.tendermint.com/v0.34/tendermint-core/configuration.html),
-- `app.toml`: generated by the Cosmos SDK (which the Injective Chain is built on), and used for configurations such as state pruning strategies, telemetry, gRPC and REST servers configuration, state sync and more. 
+- `app.toml`: generated by the Cosmos SDK (which the Enigma Chain is built on), and used for configurations such as state pruning strategies, telemetry, gRPC and REST servers configuration, state sync and more. 
 
 Both files are heavily commented, please refer to them directly to tweak your node.
 
-One example config to tweak is the `minimum-gas-prices` field inside `app.toml`, which defines the minimum gas prices the validator node is willing to accept for processing a transaction. If it's empty, make sure to edit the field with some value, for example `10inj`, or else the node will halt on startup. For the purpose of this tutorial, let's set the minimum gas price to 0:
+One example config to tweak is the `minimum-gas-prices` field inside `app.toml`, which defines the minimum gas prices the validator node is willing to accept for processing a transaction. If it's empty, make sure to edit the field with some value, for example `10fury`, or else the node will halt on startup. For the purpose of this tutorial, let's set the minimum gas price to 0:
 
 ```toml
  # The minimum gas prices a validator is willing to accept for processing a
  # transaction. A transaction's fees must meet the minimum of any denomination
  # specified in this config (e.g. 0.25token1;0.0001token2).
- minimum-gas-prices = "0inj"
+ minimum-gas-prices = "0fury"
 ```
 
 ## Run a Localnet
@@ -86,7 +86,7 @@ One example config to tweak is the `minimum-gas-prices` field inside `app.toml`,
 Now that everything is set up, you can finally start your node:
 
 ```bash
-injectived start
+enigmad start
 ```
 
 You should see blocks come in.

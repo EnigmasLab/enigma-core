@@ -10,9 +10,9 @@ mkdir -p $SWAGGER_BUILD_DIR $SWAGGER_TMP_DIR
 cd $SWAGGER_BUILD_DIR
 mkdir -p proto
 printf "version: v1\ndirectories:\n  - proto\n  - third_party" > buf.work.yaml
-printf "version: v1\nname: buf.build/InjectiveLabs/injective-core\n" > proto/buf.yaml
+printf "version: v1\nname: buf.build/EnigmasLab/enigma-core\n" > proto/buf.yaml
 cp ../proto/buf.gen.swagger.yaml proto/buf.gen.swagger.yaml
-cp -r ../proto/injective proto/
+cp -r ../proto/enigma proto/
 
 # download third_party API definitions
 buf export buf.build/cosmos/cosmos-sdk:v0.47.0 --output=third_party

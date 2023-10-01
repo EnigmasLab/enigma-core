@@ -3,7 +3,7 @@ package cli
 import (
 	"fmt"
 
-	"github.com/InjectiveLabs/injective-core/cli/flags"
+	"github.com/EnigmasLab/enigma-core/cli/flags"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	sdk "github.com/cosmos/cosmos-sdk/types"

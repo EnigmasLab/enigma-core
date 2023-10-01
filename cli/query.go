@@ -9,7 +9,7 @@ import (
 	"github.com/cosmos/gogoproto/proto"
 	"github.com/spf13/cobra"
 
-	"github.com/InjectiveLabs/injective-core/cli/flags"
+	"github.com/EnigmasLab/enigma-core/cli/flags"
 )
 
 // QueryCmd generates single query command

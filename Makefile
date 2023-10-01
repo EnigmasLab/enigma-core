@@ -2,10 +2,10 @@ APP_VERSION = $(shell git describe --abbrev=0 --tags)
 GIT_COMMIT = $(shell git rev-parse --short HEAD)
 BUILD_DATE = $(shell date -u "+%Y%m%d-%H%M")
 COSMOS_VERSION_PKG = github.com/cosmos/cosmos-sdk/version
-COSMOS_VERSION_NAME = injective
-VERSION_PKG = github.com/InjectiveLabs/injective-core/version
+COSMOS_VERSION_NAME = enigma
+VERSION_PKG = github.com/EnigmasLab/enigma-core/version
 PACKAGES=$(shell go list ./... | grep -Ev 'vendor|importer|gen|api/design|rpc/tester')
-IMAGE_NAME := gcr.io/injective-core/core
+IMAGE_NAME := gcr.io/enigma-core/core
 
 # process build tags
 build_tags = netgo
@@ -54,14 +54,14 @@ push:
 	docker push $(IMAGE_NAME):latest
 
 install: export GOPROXY=direct
-install: export VERSION_FLAGS="-X $(VERSION_PKG).AppVersion=$(APP_VERSION) -X $(VERSION_PKG).GitCommit=$(GIT_COMMIT)  -X $(VERSION_PKG).BuildDate=$(BUILD_DATE) -X $(COSMOS_VERSION_PKG).Version=$(APP_VERSION) -X $(COSMOS_VERSION_PKG).Name=$(COSMOS_VERSION_NAME) -X $(COSMOS_VERSION_PKG).AppName=injectived -X $(COSMOS_VERSION_PKG).Commit=$(GIT_COMMIT)"
+install: export VERSION_FLAGS="-X $(VERSION_PKG).AppVersion=$(APP_VERSION) -X $(VERSION_PKG).GitCommit=$(GIT_COMMIT)  -X $(VERSION_PKG).BuildDate=$(BUILD_DATE) -X $(COSMOS_VERSION_PKG).Version=$(APP_VERSION) -X $(COSMOS_VERSION_PKG).Name=$(COSMOS_VERSION_NAME) -X $(COSMOS_VERSION_PKG).AppName=enigmad -X $(COSMOS_VERSION_PKG).Commit=$(GIT_COMMIT)"
 install:
-	cd cmd/injectived/ && go install -tags $(build_tags_comma_sep) $(BUILD_FLAGS) -ldflags $(VERSION_FLAGS)
+	cd cmd/enigmad/ && go install -tags $(build_tags_comma_sep) $(BUILD_FLAGS) -ldflags $(VERSION_FLAGS)
 
-install-ci: export GOPROXY=https://goproxy.injective.dev,direct
-install-ci: export VERSION_FLAGS="-X $(VERSION_PKG).AppVersion=$(APP_VERSION) -X $(VERSION_PKG).GitCommit=$(GIT_COMMIT)  -X $(VERSION_PKG).BuildDate=$(BUILD_DATE) -X $(COSMOS_VERSION_PKG).Version=$(APP_VERSION) -X $(COSMOS_VERSION_PKG).Name=$(COSMOS_VERSION_NAME) -X $(COSMOS_VERSION_PKG).AppName=injectived -X $(COSMOS_VERSION_PKG).Commit=$(GIT_COMMIT)"
+install-ci: export GOPROXY=https://goproxy.enigma.dev,direct
+install-ci: export VERSION_FLAGS="-X $(VERSION_PKG).AppVersion=$(APP_VERSION) -X $(VERSION_PKG).GitCommit=$(GIT_COMMIT)  -X $(VERSION_PKG).BuildDate=$(BUILD_DATE) -X $(COSMOS_VERSION_PKG).Version=$(APP_VERSION) -X $(COSMOS_VERSION_PKG).Name=$(COSMOS_VERSION_NAME) -X $(COSMOS_VERSION_PKG).AppName=enigmad -X $(COSMOS_VERSION_PKG).Commit=$(GIT_COMMIT)"
 install-ci:
-	cd cmd/injectived/ && go install -tags $(build_tags_comma_sep) $(BUILD_FLAGS) -ldflags $(VERSION_FLAGS)
+	cd cmd/enigmad/ && go install -tags $(build_tags_comma_sep) $(BUILD_FLAGS) -ldflags $(VERSION_FLAGS)
 
 .PHONY: install image push gen lint test mock cover
 
@@ -70,13 +70,13 @@ mock: tests/mocks.go
 	go install github.com/golang/mock/mockgen
 	go generate ./tests/...
 
-PKGS_TO_COVER := $(shell go list ./injective-chain/modules/exchange | paste -sd "," -)
+PKGS_TO_COVER := $(shell go list ./enigma-chain/modules/exchange | paste -sd "," -)
 
 deploy:
 	./deploy_contracts.sh
 
 fuzz:
-	go test -fuzz FuzzTest ./injective-chain/modules/exchange/testexchange/fuzztesting
+	go test -fuzz FuzzTest ./enigma-chain/modules/exchange/testexchange/fuzztesting
 
 test: export GOPROXY=direct
 test:
@@ -84,9 +84,9 @@ test:
 	ginkgo -r --race --randomizeSuites --randomizeAllSpecs --coverpkg=$(PKGS_TO_COVER) ./...
 
 test-erc20bridge:
-	@go test -v ./injective-chain/modules/erc20bridge/...
+	@go test -v ./enigma-chain/modules/erc20bridge/...
 test-exchange:
-	@go test -v ./injective-chain/modules/exchange/...
+	@go test -v ./enigma-chain/modules/exchange/...
 test-unit:
 	@go test -v ./... $(PACKAGES)
 
@@ -98,7 +98,7 @@ lint:
 	golangci-lint run
 
 cover:
-	go tool cover -html=tests/injective-chain/modules/exchange/exchange.coverprofile
+	go tool cover -html=tests/enigma-chain/modules/exchange/exchange.coverprofile
 
 build-release-%: export TARGET=$*
 build-release-%: export DOCKER_BUILDKIT=1
@@ -106,7 +106,7 @@ build-release-%: export VERSION_FLAGS="-X $(VERSION_PKG).AppVersion=$(APP_VERSIO
 build-release-%:
 	docker build \
 		--build-arg LDFLAGS=$(VERSION_FLAGS) \
-		--build-arg PKG=github.com/InjectiveLabs/injective-core/cmd/$(TARGET) \
+		--build-arg PKG=github.com/EnigmasLab/enigma-core/cmd/$(TARGET) \
 		--ssh=default -t $(TARGET)-release -f Dockerfile.release .
 
 prepare-release-%: export TARGET=$*
@@ -160,7 +160,7 @@ publish-ts:
 	@./client/proto-ts/scripts/gen-proto-ts-publish.sh
 
 grpc-ui:
-	grpcui -plaintext -protoset ./injectived.protoset localhost:9900
+	grpcui -plaintext -protoset ./enigmad.protoset localhost:9900
 
 .PHONY: proto proto-gen proto-lint proto-check-breaking proto-update-deps
 

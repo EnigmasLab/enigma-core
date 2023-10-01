@@ -6,10 +6,10 @@ title: Set Up Keyring
 # Setting up the keyring
 
 :::note
-This document describes how to configure and use the keyring and its various backends for an Injective Chain node. 
+This document describes how to configure and use the keyring and its various backends for an Enigma Chain node. 
 :::
 
-The keyring holds the private/public keypairs used to interact with the node. For instance, a validator key needs to be set up before running the Injective node, so that blocks can be correctly signed. The private key can be stored in different locations, called "backends", such as a file or the operating system's own key storage.
+The keyring holds the private/public keypairs used to interact with the node. For instance, a validator key needs to be set up before running the Enigma node, so that blocks can be correctly signed. The private key can be stored in different locations, called "backends", such as a file or the operating system's own key storage.
 
 ## Available backends for the keyring
 
@@ -48,10 +48,10 @@ for multiple prompts:
 
 ```bash
 # assuming that KEYPASSWD is set in the environment
-yes $KEYPASSWD | injectived keys add me
-yes $KEYPASSWD | injectived keys show me
-# start injectived with keyring-backend flag
-injectived --keyring-backend=file start
+yes $KEYPASSWD | enigmad keys add me
+yes $KEYPASSWD | enigmad keys show me
+# start enigmad with keyring-backend flag
+enigmad --keyring-backend=file start
 ```
 
 :::tip
@@ -105,22 +105,22 @@ The `memory` backend stores keys in memory. The keys are immediately deleted aft
 ## Adding keys to the keyring
 
 :::warning
-Make sure you can build your own binary, and replace `injectived` with the name of your binary in the snippets.
+Make sure you can build your own binary, and replace `enigmad` with the name of your binary in the snippets.
 :::
 
-You can use `injectived keys` for help about the keys command and `injectived keys [command] --help` for more information about a particular subcommand.
+You can use `enigmad keys` for help about the keys command and `enigmad keys [command] --help` for more information about a particular subcommand.
 
 :::tip
-You can also enable auto-completion with the `injectived completion` command. For example, at the start of a bash session, run `. <(injectived completion)`, and all `injectived` subcommands will be auto-completed.
+You can also enable auto-completion with the `enigmad completion` command. For example, at the start of a bash session, run `. <(enigmad completion)`, and all `enigmad` subcommands will be auto-completed.
 :::
 
 To create a new key in the keyring, run the `add` subcommand with a `<key_name>` argument. For the purpose of this tutorial, we will solely use the `test` backend, and call our new key `my_validator`. This key will be used in the next section.
 
 ```bash
-$ injectived keys add my_validator --keyring-backend test
+$ enigmad keys add my_validator --keyring-backend test
 
 # Put the generated address in a variable for later use.
-MY_VALIDATOR_ADDRESS=$(injectived keys show my_validator -a --keyring-backend test)
+MY_VALIDATOR_ADDRESS=$(enigmad keys show my_validator -a --keyring-backend test)
 ```
 
 This command generates a new 24-word mnemonic phrase, persists it to the relevant backend, and outputs information about the keypair. If this keypair will be used to hold value-bearing tokens, be sure to write down the mnemonic phrase somewhere safe!

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package enigma.wasmx.v1;
+
+import "enigma/wasmx/v1/wasmx.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/EnigmasLab/enigma-core/enigma-chain/modules/wasmx/types";
+
+message EventContractExecution {
+    string contract_address = 1;
+    bytes response = 2;
+    string error = 3;
+  }

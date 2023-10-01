@@ -10,7 +10,7 @@ It is highly recommended that you set up a local private network before joining 
 - Join via public endpoints; or
 - Join by running a node
 
-Anyone can setup their node with endpoints to communicate with the Injective blockchain, for convenience there are also some public endpoints available for querying the chain. These are recommended for development and testing purposes. For maximun control and reliability it's recommended to run your own node. 
+Anyone can setup their node with endpoints to communicate with the Enigma blockchain, for convenience there are also some public endpoints available for querying the chain. These are recommended for development and testing purposes. For maximun control and reliability it's recommended to run your own node. 
 
 ## Preperation For Running a Node
 
@@ -18,7 +18,7 @@ If you choose to run a node (either to set up the private network or join the pu
 
 ## Interacting With The Node
 
-Once the node is up and running, there are a few ways to interact with a node, namely using the CLI (`injectived`), gPRC and REST endpoints
+Once the node is up and running, there are a few ways to interact with a node, namely using the CLI (`enigmad`), gPRC and REST endpoints
 
 ## Contents
 

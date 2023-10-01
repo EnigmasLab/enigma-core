@@ -8,9 +8,9 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Injective Documentation",
-  tagline: "Welcome to Injective - the blockchain built for finance!",
-  url: "https://docs.injective.network/",
+  title: "Enigma Documentation",
+  tagline: "Welcome to Enigma - the blockchain built for finance!",
+  url: "https://docs.enigma.network/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Injective", // Usually your GitHub org/user name.
-  projectName: "injective-core/docs", // Usually your repo name.
+  organizationName: "Enigma", // Usually your GitHub org/user name.
+  projectName: "enigma-core/docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -72,21 +72,21 @@ const config = {
       prism: {
         additionalLanguages: ['Rust'],
       },
-      image: "/img/inj_meta.png",
+      image: "/img/fury_meta.png",
       navbar: {
         title: "DOCS",
         logo: {
-          alt: "Injective Docs",
-          src: "img/injective.svg",
+          alt: "Enigma Docs",
+          src: "img/enigma.svg",
         },
         items: [
           {
-            href: "https://injective.com/",
-            label: "Injective",
+            href: "https://enigma.com/",
+            label: "Enigma",
             position: "right",
           },
           {
-            href: "https://github.com/InjectiveLabs",
+            href: "https://github.com/EnigmasLab",
             label: "GitHub",
             position: "right",
           },
@@ -99,29 +99,29 @@ const config = {
       footer: {
         style: "light",
         logo: {
-          href: "https://injective.network",
+          href: "https://enigma.network",
           target: "_blank",
-          srcDark: "img/injective_logo.svg",
-          src: "img/injective_logo_dark.svg",
+          srcDark: "img/enigma_logo.svg",
+          src: "img/enigma_logo_dark.svg",
           height: "36px",
           style: { textAlign: "left" },
-          alt: "Injective Logo",
+          alt: "Enigma Logo",
         },
         links: [
           {
-            title: "Injective",
+            title: "Enigma",
             items: [
               {
                 label: "Hub",
-                href: "https://hub.injective.network/",
+                href: "https://hub.enigma.network/",
               },
               {
                 label: "Explorer",
-                href: "https://explorer.injective.network/",
+                href: "https://explorer.enigma.network/",
               },
               {
                 label: "Blog",
-                href: "https://blog.injective.com/",
+                href: "https://blog.enigma.com/",
               },
             ],
           },
@@ -130,19 +130,19 @@ const config = {
             items: [
               {
                 label: "Blog",
-                href: "https://blog.injective.com/",
+                href: "https://blog.enigma.com/",
               },
               {
-                label: "Injective Forum",
-                href: "https://gov.injective.network/",
+                label: "Enigma Forum",
+                href: "https://gov.enigma.network/",
               },
               {
                 label: "Discord",
-                href: "https://discord.gg/injective",
+                href: "https://discord.gg/enigma",
               },
               {
                 label: "Reddit",
-                href: "https://www.reddit.com/r/injective/",
+                href: "https://www.reddit.com/r/enigma/",
               },
             ],
           },
@@ -151,7 +151,7 @@ const config = {
             items: [
               {
                 label: "Twitter",
-                href: "https://twitter.com/Injective_",
+                href: "https://twitter.com/Enigma_",
               },
               {
                 label: "Youtube",
@@ -159,16 +159,16 @@ const config = {
               },
               {
                 label: "LinkedIn",
-                href: "https://www.linkedin.com/company/injective-protocol",
+                href: "https://www.linkedin.com/company/enigma-protocol",
               },
               {
                 label: "Medium",
-                href: "https://injectiveprotocol.medium.com/",
+                href: "https://enigmaprotocol.medium.com/",
               },
             ],
           },
         ],
-        copyright: `Copyright © Injective Labs Inc. since 2021. All rights reserved <a href="https://injectivelabs.org/">Injective</a>`,
+        copyright: `Copyright © Enigma Labs Inc. since 2021. All rights reserved <a href="https://injectivelabs.org/">Enigma</a>`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -177,7 +177,7 @@ const config = {
       algolia: {
         appId: "OSH0IFX0OC",
         apiKey: "b8c3930ea2d1ed063992787837d3567f",
-        indexName: "injective",
+        indexName: "enigma",
         contextualSearch: true,
         searchParameters: {},
       },

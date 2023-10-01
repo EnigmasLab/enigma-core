@@ -4,8 +4,8 @@
 # Production
 /build
 
-#Modules info that gets regenarated on each build. Only ignore Injective modules since Cosmos modules are now hosted locally
-/docs/develop/modules/Injective
+#Modules info that gets regenarated on each build. Only ignore Enigma modules since Cosmos modules are now hosted locally
+/docs/develop/modules/Enigma
 
 # Generated files
 .docusaurus

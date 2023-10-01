@@ -6,32 +6,32 @@ title: CosmWasm governance and deployment guide Mainnet
 # CosmWasm governance and deployment guide Mainnet
 
 
-This guide will get you started with the governance process, deploying and instantiation of CosmWasm smart contracts on Injective Mainnet.
+This guide will get you started with the governance process, deploying and instantiation of CosmWasm smart contracts on Enigma Mainnet.
 
-## Submit a code upload proposal to Injective mainnet
+## Submit a code upload proposal to Enigma mainnet
 
-Injective network participants can propose to deploy smart contracts and vote in governance to enable them. The wasmd authorization settings are by on-chain governance, which means deployment of a contract is determined by governance.
+Enigma network participants can propose to deploy smart contracts and vote in governance to enable them. The wasmd authorization settings are by on-chain governance, which means deployment of a contract is determined by governance.
 
-A governance proposal is the first step to upload code to Injective mainnet, and in this section, you will learn how to submit a proposal and vote for it.
+A governance proposal is the first step to upload code to Enigma mainnet, and in this section, you will learn how to submit a proposal and vote for it.
 
-Sample usage of injectived to start a governance proposal to upload code to the chain. 
+Sample usage of enigmad to start a governance proposal to upload code to the chain. 
 
 ```bash
-injectived tx gov submit-proposal wasm-store artifacts/cw20_base.wasm
+enigmad tx gov submit-proposal wasm-store artifacts/cw20_base.wasm
 --title "Title of proposal - Upload contract" \
 --description "Description of proposal" \
 --instantiate-everybody true \
---deposit=1000000000000000000inj \
---run-as [inj_address] \
+--deposit=1000000000000000000fury \
+--run-as [fury_address] \
 --gas=10000000 \
---chain-id=injective-888 \
+--chain-id=enigma-888 \
 --broadcast-mode=block \
 --yes \
 --from [YOUR_KEY] \
---gas-prices=500000000inj
+--gas-prices=500000000fury
 ```
 
-The command `injectived tx gov submit-proposal wasm-store` submits a wasm binary proposal. [Check out this guide for an example.](https://docs.injective.network/develop/guides/cosmwasm-dapps/Cosmwasm_deployment_guide_Testnet)  
+The command `enigmad tx gov submit-proposal wasm-store` submits a wasm binary proposal. [Check out this guide for an example.](https://docs.enigma.network/develop/guides/cosmwasm-dapps/Cosmwasm_deployment_guide_Testnet)  
 
 After the proposal creation, it needs to be approved by governance voting, and after the proposal passes the code will be deployed. 
 
@@ -45,7 +45,7 @@ Let’s go through two key flags:
 
 ## Instantiate contracts and governance
 
-Instantiating a contract on Mainnet depends on the flags used when uploading the code, and by default, it is set to permissionless, as we can verify on the genesis wasmd Injective setup:
+Instantiating a contract on Mainnet depends on the flags used when uploading the code, and by default, it is set to permissionless, as we can verify on the genesis wasmd Enigma setup:
 
 ``` json
 "wasm": {
@@ -66,7 +66,7 @@ Instantiating a contract on Mainnet depends on the flags used when uploading the
 Unless the contract has been uploaded with the flag `--instantiate-everybody false`, everybody can create new instances of that code. 
 
 :::info
-The Injective Testnet is permissionless by default in order to allow developers to easily deploy contracts.
+The Enigma Testnet is permissionless by default in order to allow developers to easily deploy contracts.
 ::: 
 
 ### 2.2 Instantiate contract proposal
@@ -74,7 +74,7 @@ The Injective Testnet is permissionless by default in order to allow developers 
 For contracts uploaded with the flag --instantiate-everybody false you will need to go through governance before being able to instantiate the contract.
 
 ```bash
-injectived tx gov submit-proposal instantiate-contract
+enigmad tx gov submit-proposal instantiate-contract
 --title "Instantiate contract cwMyNewToken"
 --description "Use the CW20 factory to create a new token"
 --admin string             Address of an admin

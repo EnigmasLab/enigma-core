@@ -34,7 +34,7 @@ RUN pip3 install --upgrade pip && \
     pip3 install --no-cache-dir awscli && \
     rm -rf /var/cache/apk/*
 COPY --from=builder /go/bin/* /usr/local/bin/
-COPY --from=builder /src/injectived.sh .
+COPY --from=builder /src/enigmad.sh .
 
 #configure container
 VOLUME /apps/data
@@ -42,4 +42,4 @@ WORKDIR /apps/data
 EXPOSE 26657 26656 10337 9900 9091
 
 #default command
-CMD sh /injectived.sh
+CMD sh /enigmad.sh

@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
-description: Learn about the differences between `Gas` and `Fees` on the Injective Chain.
+description: Learn about the differences between `Gas` and `Fees` on the Enigma Chain.
 title: Gas and Fees
 ---
 
 # Gas and Fees
 
 :::note
-Learn about the differences between `Gas` and `Fees` on the Injective Chain. 
+Learn about the differences between `Gas` and `Fees` on the Enigma Chain. 
 :::
 
 :::info Pre-requisite Readings
@@ -17,7 +17,7 @@ Learn about the differences between `Gas` and `Fees` on the Injective Chain.
 
 The concept of Gas represents the amount of computational effort required to execute specific operations on the state machine.
 
-The Injective Chain utilizes the concept of gas to track the resource usage of operations during execution. Operations on the Cosmos SDK (which the Injective Protocol is built on) are represented as read or writes done to the chain's store.
+The Enigma Chain utilizes the concept of gas to track the resource usage of operations during execution. Operations on the Cosmos SDK (which the Enigma Protocol is built on) are represented as read or writes done to the chain's store.
 
 A fee is calculated and charged to the user during a message execution. This fee is
 calculated from the sum of all gas consumed in a message execution:

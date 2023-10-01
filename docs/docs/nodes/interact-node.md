@@ -12,9 +12,9 @@ There are multiple ways to interact with a node: using the CLI, using gRPC or us
 
 ## Option 1: Using the CLI
 
-You can use the CLI (aka `injectived`) to interact with a node. If you are interact with your a node in your local private network, but sure the node is running in one terminal before you use the CLI.
+You can use the CLI (aka `enigmad`) to interact with a node. If you are interact with your a node in your local private network, but sure the node is running in one terminal before you use the CLI.
 
-For more detilas of how to use `injectived`, go to [Using `injectived`](../develop/tools/injectived/02_using.md).
+For more detilas of how to use `enigmad`, go to [Using `enigmad`](../develop/tools/enigmad/02_using.md).
 
 ## Option 2: Using gRPC
 
@@ -88,7 +88,7 @@ import (
 )
 
 func queryState() error {
-    myAddress, err := sdk.AccAddressFromBech32("inj...")
+    myAddress, err := sdk.AccAddressFromBech32("fury...")
     if err != nil {
         return err
     }
@@ -104,7 +104,7 @@ func queryState() error {
     bankClient := banktypes.NewQueryClient(grpcConn)
     bankRes, err := bankClient.Balance(
         context.Background(),
-        &banktypes.QueryBalanceRequest{Address: myAddress, Denom: "inj"},
+        &banktypes.QueryBalanceRequest{Address: myAddress, Denom: "fury"},
     )
     if err != nil {
         return err

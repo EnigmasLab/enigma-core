@@ -18,7 +18,7 @@ CosmWasm is a novel smart contracting platform built for the Cosmos ecosystem. Y
 
 | Guide Name                                                                                                |       Duration     |  Level |
 |:----------------------------------------------------------------------------------------------------------|:-------------:|------:|
-| **[Your First CosmWasm Contract](./Your_first_contract_on_injective)**                                    |  30 min | Introduction |
+| **[Your First CosmWasm Contract](./Your_first_contract_on_enigma)**                                    |  30 min | Introduction |
 | **[Deploy CW20 Smart Contracts on Your Local Environment](./01_Cosmwasm_CW20_deployment_guide_Local.md)** |    20 min   |   Intermediate |
 | **[Deploy CW20 Smart Contracts on Testnet](./02_Cosmwasm_deployment_guide_Testnet.md)**                   |    30 min   |   Intermediate |
 | **[Mainnet Governance](./03_Cosmwasm_CW20_deployment_guide_Mainnet.md)**                                  |    10 min   |   Advanced |

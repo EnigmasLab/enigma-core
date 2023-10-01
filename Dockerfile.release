@@ -9,13 +9,13 @@ WORKDIR /src
 COPY go.mod .
 COPY go.sum .
 
-ENV GOPRIVATE=github.com/InjectiveLabs/injective-core/*
-RUN git config --system url."ssh://git@github.com:InjectiveLabs/injective-core".insteadOf "https://github.com/InjectiveLabs/injective-core"
+ENV GOPRIVATE=github.com/EnigmasLab/enigma-core/*
+RUN git config --system url."ssh://git@github.com:EnigmasLab/enigma-core".insteadOf "https://github.com/EnigmasLab/enigma-core"
 RUN mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 RUN --mount=type=ssh go mod download
 RUN touch /mod
 
-FROM docker.injective.dev/go-cross:build
+FROM docker.enigma.dev/go-cross:build
 
 # ensures that dependency on mod stage (1) is properly resolved
 COPY --from=mod /mod /mod

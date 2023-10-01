@@ -76,7 +76,7 @@ func NewInstantSpotMarketLaunchTxCmd() *cobra.Command {
 		cli.FlagsMapping{"MinPriceTickSize": cli.Flag{Flag: FlagMinPriceTickSize}, "MinQuantityTickSize": cli.Flag{Flag: FlagMinQuantityTickSize}},
 		cli.ArgsMapping{},
 	)
-	cmd.Example = `tx exchange instant-spot-market-launch INJ/ATOM uinj uatom --min-price-tick-size=1000000000 --min-quantity-tick-size=1000000000000000`
+	cmd.Example = `tx exchange instant-spot-market-launch FURY/ATOM ufury uatom --min-price-tick-size=1000000000 --min-quantity-tick-size=1000000000000000`
 	cmd.Flags().String(FlagMinPriceTickSize, "1000000000", "min price tick size")
 	cmd.Flags().String(FlagMinQuantityTickSize, "1000000000000000", "min quantity tick size")
 	return cmd
@@ -116,7 +116,7 @@ func NewSpotMarketUpdateParamsProposalTxCmd() *cobra.Command {
 			}},
 			"InitialDeposit": cli.Flag{Flag: govcli.FlagDeposit},
 		}, cli.ArgsMapping{})
-	cmd.Example = `tx exchange update-spot-market-params --market-id="0xacdd4f9cb90ecf5c4e254acbf65a942f562ca33ba718737a93e5cb3caadec3aa" --title="Spot market params update" --description="XX" --deposit="1000000000000000000inj"`
+	cmd.Example = `tx exchange update-spot-market-params --market-id="0xacdd4f9cb90ecf5c4e254acbf65a942f562ca33ba718737a93e5cb3caadec3aa" --title="Spot market params update" --description="XX" --deposit="1000000000000000000fury"`
 
 	cmd.Flags().String(FlagMarketID, "", "Spot market ID")
 	cmd.Flags().String(FlagMakerFeeRate, "", "maker fee rate")

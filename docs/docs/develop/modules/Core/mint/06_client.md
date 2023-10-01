@@ -9,7 +9,7 @@ A user can query and interact with the `mint` module using the CLI.
 The `query` commands allow users to query `mint` state.
 
 ```
-injectived query mint --help
+enigmad query mint --help
 ```
 
 #### annual-provisions
@@ -17,13 +17,13 @@ injectived query mint --help
 The `annual-provisions` command allow users to query the current minting annual provisions value
 
 ```
-injectived query mint annual-provisions [flags]
+enigmad query mint annual-provisions [flags]
 ```
 
 Example:
 
 ```
-injectived query mint annual-provisions
+enigmad query mint annual-provisions
 ```
 
 Example Output:
@@ -37,13 +37,13 @@ Example Output:
 The `inflation` command allow users to query the current minting inflation value
 
 ```
-injectived query mint inflation [flags]
+enigmad query mint inflation [flags]
 ```
 
 Example:
 
 ```
-injectived query mint inflation
+enigmad query mint inflation
 ```
 
 Example Output:
@@ -57,7 +57,7 @@ Example Output:
 The `params` command allow users to query the current minting parameters
 
 ```
-injectived query mint params [flags]
+enigmad query mint params [flags]
 ```
 
 Example:

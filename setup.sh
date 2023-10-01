@@ -4,30 +4,30 @@ set -e
 
 make install
 
-killall injectived &>/dev/null || true
-rm -rf ~/.injectived
+killall enigmad &>/dev/null || true
+rm -rf ~/.enigmad
 
-CHAINID="injective-1"
-MONIKER="injective"
+CHAINID="enigma-1"
+MONIKER="enigma"
 PASSPHRASE="12345678"
-FEEDADMIN="inj1k2z3chspuk9wsufle69svmtmnlc07rvw9djya7"
+FEEDADMIN="fury1k2z3chspuk9wsufle69svmtmnlc07rvw9djya7"
 
 # Set moniker and chain-id for Ethermint (Moniker can be anything, chain-id must be an integer)
-injectived init $MONIKER --chain-id $CHAINID
-perl -i -pe 's/^timeout_commit = ".*?"/timeout_commit = "2500ms"/' ~/.injectived/config/config.toml
-perl -i -pe 's/^minimum-gas-prices = ".*?"/minimum-gas-prices = "500000000inj"/' ~/.injectived/config/app.toml
+enigmad init $MONIKER --chain-id $CHAINID
+perl -i -pe 's/^timeout_commit = ".*?"/timeout_commit = "2500ms"/' ~/.enigmad/config/config.toml
+perl -i -pe 's/^minimum-gas-prices = ".*?"/minimum-gas-prices = "500000000fury"/' ~/.enigmad/config/app.toml
 
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["staking"]["params"]["bond_denom"]="inj"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["crisis"]["constant_fee"]["denom"]="inj"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["min_deposit"][0]["denom"]="inj"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["staking"]["params"]["bond_denom"]="fury"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["crisis"]["constant_fee"]["denom"]="fury"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["min_deposit"][0]["denom"]="fury"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
 echo "NOTE: Setting Governance Voting Period to 10 seconds for easy testing"
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["gov"]["voting_params"]["voting_period"]="10s"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["mint"]["params"]["mint_denom"]="inj"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["auction"]["params"]["auction_period"]="10"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["ocr"]["params"]["module_admin"]="'$FEEDADMIN'"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["ocr"]["params"]["payout_block_interval"]="5"' > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["gov"]["voting_params"]["voting_period"]="10s"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["mint"]["params"]["mint_denom"]="fury"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["auction"]["params"]["auction_period"]="10"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["ocr"]["params"]["module_admin"]="'$FEEDADMIN'"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["ocr"]["params"]["payout_block_interval"]="5"' > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
 
-INJ='{"denom":"inj","decimals":18}'
+FURY='{"denom":"fury","decimals":18}'
 
 USDT='{"denom":"peggy0xdAC17F958D2ee523a2206206994597C13D831ec7","decimals":6}'
 USDC='{"denom":"peggy0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48","decimals":6}'
@@ -85,14 +85,14 @@ DOT='{"denom":"ibc/624BA9DD171915A2B9EA70F69638B2CEA179959850C1A586F6C485498F29E
 
 PEGGY_DENOM_DECIMALS="${USDT},${USDC},${ONEINCH},${AXS},${BAT},${BNB},${WBTC},${BUSD},${CEL},${CELL},${CHZ},${COMP},${DAI},${DEFI5},${ENJ},${WETH},${EVAI},${FTM},${GF},${GRT},${HT},${LINK},${MATIC},${NEXO},${NOIA},${OCEAN},${PAXG},${POOL},${QNT},${RUNE},${SHIB},${SNX},${STARS},${STT},${SUSHI},${SWAP},${UMA},${UNI},${UTK},${YFI},${ZRX}"
 IBC_DENOM_DECIMALS="${ATOM},${USTC},${AXL},${XPRT},${SCRT},${OSMO},${LUNC},${HUAHUA},${EVMOS},${DOT}"
-DENOM_DECIMALS='['${INJ},${PEGGY_DENOM_DECIMALS},${IBC_DENOM_DECIMALS}']'
+DENOM_DECIMALS='['${FURY},${PEGGY_DENOM_DECIMALS},${IBC_DENOM_DECIMALS}']'
 
-cat $HOME/.injectived/config/genesis.json | jq '.app_state["exchange"]["denom_decimals"]='${DENOM_DECIMALS} > $HOME/.injectived/config/tmp_genesis.json && mv $HOME/.injectived/config/tmp_genesis.json $HOME/.injectived/config/genesis.json
+cat $HOME/.enigmad/config/genesis.json | jq '.app_state["exchange"]["denom_decimals"]='${DENOM_DECIMALS} > $HOME/.enigmad/config/tmp_genesis.json && mv $HOME/.enigmad/config/tmp_genesis.json $HOME/.enigmad/config/genesis.json
 
-yes $PASSPHRASE | injectived keys add genesis
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(yes $PASSPHRASE | injectived keys show genesis -a) 1000000000000000000000000inj,1000000000000000000000000atom,100000000000000000000000000peggy0xdAC17F958D2ee523a2206206994597C13D831ec7,100000000000000000000000000peggy0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
+yes $PASSPHRASE | enigmad keys add genesis
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(yes $PASSPHRASE | enigmad keys show genesis -a) 1000000000000000000000000fury,1000000000000000000000000atom,100000000000000000000000000peggy0xdAC17F958D2ee523a2206206994597C13D831ec7,100000000000000000000000000peggy0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
 # zero address account
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID inj1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqe2hm49 1inj
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID fury1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqe2hm49 1fury
 
 WASM_KEY="wasm"
 WASM_MNEMONIC="juice dog over thing anger search film document sight fork enrich jungle vacuum grab more sunset winner diesel flock smooth route impulse cheap toward"
@@ -119,7 +119,7 @@ USER6_KEY="signer1"
 USER6_MNEMONIC="output arrange offer advance egg point office silent diamond fame heart hotel rocket sheriff resemble couple race crouch kit laptop document grape drastic lumber"
 
 USER7_KEY="signer2"
-USER7_MNEMONIC="velvet gesture rule caution injury stick property decorate raccoon physical narrow tuition address drum shoot pyramid record sport include rich actress sadness crater seek"
+USER7_MNEMONIC="velvet gesture rule caution furyury stick property decorate raccoon physical narrow tuition address drum shoot pyramid record sport include rich actress sadness crater seek"
 
 USER8_KEY="signer3"
 USER8_MNEMONIC="guitar parrot nuclear sun blue marble amazing extend solar device address better chalk shock street absent follow notice female picnic into trade brass couch"
@@ -133,43 +133,43 @@ USER10_MNEMONIC="apart acid night more advance december weather expect pause tax
 NEWLINE=$'\n'
 
 # Import keys from mnemonics
-yes "$WASM_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $WASM_KEY --recover
-yes "$VAL_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $VAL_KEY --recover
-yes "$USER1_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER1_KEY --recover
-yes "$USER2_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER2_KEY --recover
-yes "$USER3_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER3_KEY --recover
-yes "$USER4_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER4_KEY --recover
-yes "$USER5_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER5_KEY --recover
-yes "$USER6_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER6_KEY --recover
-yes "$USER7_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER7_KEY --recover
-yes "$USER8_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER8_KEY --recover
-yes "$USER9_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER9_KEY --recover
-yes "$USER10_MNEMONIC$NEWLINE$PASSPHRASE" | injectived keys add $USER10_KEY --recover
+yes "$WASM_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $WASM_KEY --recover
+yes "$VAL_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $VAL_KEY --recover
+yes "$USER1_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER1_KEY --recover
+yes "$USER2_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER2_KEY --recover
+yes "$USER3_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER3_KEY --recover
+yes "$USER4_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER4_KEY --recover
+yes "$USER5_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER5_KEY --recover
+yes "$USER6_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER6_KEY --recover
+yes "$USER7_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER7_KEY --recover
+yes "$USER8_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER8_KEY --recover
+yes "$USER9_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER9_KEY --recover
+yes "$USER10_MNEMONIC$NEWLINE$PASSPHRASE" | enigmad keys add $USER10_KEY --recover
 
 # Allocate genesis accounts (cosmos formatted addresses)
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $WASM_KEY -a) 1000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $VAL_KEY -a) 1000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER1_KEY -a) 1000000000000000000000inj,1000000000000000000000atom,100000000000000000000000000peggy0xdAC17F958D2ee523a2206206994597C13D831ec7,100000000000000000000000000peggy0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER2_KEY -a) 1000000000000000000000inj,100000000000000000000000000peggy0xdAC17F958D2ee523a2206206994597C13D831ec7,100000000000000000000000000peggy0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER3_KEY -a) 1000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER4_KEY -a) 1000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER5_KEY -a) 100000000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER6_KEY -a) 100000000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER7_KEY -a) 100000000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER8_KEY -a) 100000000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER9_KEY -a) 100000000000000000000000000inj
-yes $PASSPHRASE | injectived add-genesis-account --chain-id $CHAINID $(injectived keys show $USER10_KEY -a) 100000000000000000000000000inj
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $WASM_KEY -a) 1000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $VAL_KEY -a) 1000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER1_KEY -a) 1000000000000000000000fury,1000000000000000000000atom,100000000000000000000000000peggy0xdAC17F958D2ee523a2206206994597C13D831ec7,100000000000000000000000000peggy0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER2_KEY -a) 1000000000000000000000fury,100000000000000000000000000peggy0xdAC17F958D2ee523a2206206994597C13D831ec7,100000000000000000000000000peggy0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER3_KEY -a) 1000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER4_KEY -a) 1000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER5_KEY -a) 100000000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER6_KEY -a) 100000000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER7_KEY -a) 100000000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER8_KEY -a) 100000000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER9_KEY -a) 100000000000000000000000000fury
+yes $PASSPHRASE | enigmad add-genesis-account --chain-id $CHAINID $(enigmad keys show $USER10_KEY -a) 100000000000000000000000000fury
 
 echo "Signing genesis transaction"
 # Sign genesis transaction
-yes $PASSPHRASE | injectived gentx genesis 1000000000000000000000inj --chain-id $CHAINID
+yes $PASSPHRASE | enigmad gentx genesis 1000000000000000000000fury --chain-id $CHAINID
 
 echo "Collecting genesis transaction"
 # Collect genesis tx
-yes $PASSPHRASE | injectived collect-gentxs
+yes $PASSPHRASE | enigmad collect-gentxs
 
 echo "Validating genesis"
 # Run this to ensure everything worked and that the genesis file is setup correctly
-injectived validate-genesis
+enigmad validate-genesis
 
 echo "Setup done!"

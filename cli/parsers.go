@@ -17,7 +17,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/spf13/pflag"
 
-	"github.com/InjectiveLabs/injective-core/injective-chain/modules/exchange/types"
+	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
 )
 
 // parseNumFields returns number of zero fields in the struct that needs to be parsed from args

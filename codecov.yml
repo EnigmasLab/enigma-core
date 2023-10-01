@@ -12,7 +12,7 @@ ignore:
   - "**/testexchange/**"
 
 fixes:
-  - "/injective-core::"
+  - "/enigma-core::"
 
 comment:
   layout: "diff"

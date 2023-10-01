@@ -18,7 +18,7 @@ It can be broken down in the following way:
 
 - If the inflation rate is below the goal %-bonded the inflation rate will
    increase until a maximum value is reached
-- If the goal % bonded (85% on Injective) is maintained, then the inflation
+- If the goal % bonded (85% on Enigma) is maintained, then the inflation
    rate will stay constant
 - If the inflation rate is above the goal %-bonded the inflation rate will
    decrease until a minimum value is reached
