@@ -37,8 +37,7 @@ service Query {
   // Retrieves the entire auction module's state
   rpc TokenfactoryModuleState(QueryModuleStateRequest)
       returns (QueryModuleStateResponse) {
-    option (google.api.http).get =
-        "/enigma/tokenfactory/v1beta1/module_state";
+    option (google.api.http).get = "/enigma/tokenfactory/v1beta1/module_state";
   }
 }
 

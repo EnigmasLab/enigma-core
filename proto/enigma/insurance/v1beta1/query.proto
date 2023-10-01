@@ -28,8 +28,7 @@ service Query {
   // Retrieves all insurance funds
   rpc InsuranceFunds(QueryInsuranceFundsRequest)
       returns (QueryInsuranceFundsResponse) {
-    option (google.api.http).get =
-        "/enigma/insurance/v1beta1/insurance_funds";
+    option (google.api.http).get = "/enigma/insurance/v1beta1/insurance_funds";
   }
 
   // Retrives the value of insurance fund share token at current price (not

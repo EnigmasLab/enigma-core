@@ -41,8 +41,7 @@ service Msg {
   }
   rpc SetOrchestratorAddresses(MsgSetOrchestratorAddresses)
       returns (MsgSetOrchestratorAddressesResponse) {
-    option (google.api.http).post =
-        "/enigma/peggy/v1/set_orchestrator_address";
+    option (google.api.http).post = "/enigma/peggy/v1/set_orchestrator_address";
   }
   rpc CancelSendToEth(MsgCancelSendToEth) returns (MsgCancelSendToEthResponse) {
     option (google.api.http).post = "/enigma/peggy/v1/cancel_send_to_eth";

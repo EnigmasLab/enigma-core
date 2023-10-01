@@ -5,7 +5,7 @@ COSMOS_VERSION_PKG = github.com/cosmos/cosmos-sdk/version
 COSMOS_VERSION_NAME = enigma
 VERSION_PKG = github.com/EnigmasLab/enigma-core/version
 PACKAGES=$(shell go list ./... | grep -Ev 'vendor|importer|gen|api/design|rpc/tester')
-IMAGE_NAME := gcr.io/enigma-core/core
+IMAGE_NAME := docker.io/fanfury/enigma-core
 
 # process build tags
 build_tags = netgo

@@ -24,8 +24,7 @@ service Query {
   // Retrieves the state for all band price feeds
   rpc BandPriceStates(QueryBandPriceStatesRequest)
       returns (QueryBandPriceStatesResponse) {
-    option (google.api.http).get =
-        "/enigma/oracle/v1beta1/band_price_states";
+    option (google.api.http).get = "/enigma/oracle/v1beta1/band_price_states";
   }
 
   // Retrieves the state for all band ibc price feeds
@@ -52,8 +51,7 @@ service Query {
   // Retrieves the state for all pyth price feeds
   rpc PythPriceStates(QueryPythPriceStatesRequest)
       returns (QueryPythPriceStatesResponse) {
-    option (google.api.http).get =
-        "/enigma/oracle/v1beta1/pyth_price_states";
+    option (google.api.http).get = "/enigma/oracle/v1beta1/pyth_price_states";
   }
 
   // Retrieves the state for all provider price feeds
@@ -103,9 +101,7 @@ service Query {
 
 message QueryPythPriceRequest { string price_id = 1; }
 
-message QueryPythPriceResponse {
-  PythPriceState price_state = 1;
-}
+message QueryPythPriceResponse { PythPriceState price_state = 1; }
 
 // QueryOracleParamsRequest is the request type for the Query/OracleParams RPC
 // method.
