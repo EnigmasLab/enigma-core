@@ -6,7 +6,7 @@ import (
 	stakingTypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
 )

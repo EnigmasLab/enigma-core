@@ -9,7 +9,7 @@ import (
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	"github.com/ethereum/go-ethereum/common"

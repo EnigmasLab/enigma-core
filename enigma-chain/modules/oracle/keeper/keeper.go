@@ -2,7 +2,7 @@ package keeper
 
 import (
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/oracle/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	"github.com/cometbft/cometbft/libs/log"
 	"github.com/cosmos/cosmos-sdk/codec"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"

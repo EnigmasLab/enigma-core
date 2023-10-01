@@ -4,7 +4,7 @@ import (
 	"sync"
 
 	"cosmossdk.io/errors"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"

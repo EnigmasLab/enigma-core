@@ -17,7 +17,7 @@ import (
 	"google.golang.org/grpc"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	cometbftdb "github.com/cometbft/cometbft-db"
 	tcmd "github.com/cometbft/cometbft/cmd/cometbft/commands"
 	"github.com/cometbft/cometbft/node"

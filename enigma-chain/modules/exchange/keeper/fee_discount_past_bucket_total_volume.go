@@ -4,7 +4,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
 )

@@ -6,7 +6,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 // GetCampaignRewardPendingPool fetches the trading reward pool corresponding to a given start timestamp.

@@ -10,7 +10,7 @@ import (
 
 	ibchost "github.com/cosmos/ibc-go/v7/modules/core/24-host"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 // ChanCloseInit defines a wrapper function for the channel Keeper's function

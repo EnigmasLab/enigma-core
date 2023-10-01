@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 func (k *Keeper) SetIsFirstFeeCycleFinished(ctx sdk.Context, isFirstFeeCycleFinished bool) {

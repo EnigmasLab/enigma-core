@@ -10,7 +10,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/peggy/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 // AttestationHandler processes `observed` Attestations

@@ -17,7 +17,7 @@ import (
 
 	secp256k1 "github.com/EnigmasLab/enigma-core/enigma-chain/crypto/ethsecp256k1"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/ocr/types"
 )

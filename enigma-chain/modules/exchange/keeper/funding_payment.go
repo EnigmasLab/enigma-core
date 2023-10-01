@@ -5,7 +5,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 func (k *Keeper) ProcessHourlyFundings(ctx sdk.Context) {

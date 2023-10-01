@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 // GetCurrentCampaignEndTimestamp fetches the end timestamp of the current TradingRewardCampaign.

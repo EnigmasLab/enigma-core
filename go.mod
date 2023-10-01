@@ -46,7 +46,7 @@ require (
 	cosmossdk.io/errors v1.0.0-beta.7
 	cosmossdk.io/math v1.0.1
 	cosmossdk.io/tools/rosetta v0.2.1
-	github.com/EnigmasLab/metrics v0.0.4
+	github.com/InjectiveLabs/metrics v0.0.4
 	github.com/btcsuite/btcd/btcutil v1.1.3
 	github.com/prometheus/client_golang v1.15.0
 	sigs.k8s.io/yaml v1.3.0
@@ -200,13 +200,13 @@ require (
 )
 
 replace (
-	cosmossdk.io/math => github.com/EnigmasLab/cosmos-sdk/math v0.47.2-fury
-	github.com/CosmWasm/wasmd => github.com/EnigmasLab/wasmd v0.40.0-fury
-	github.com/bandprotocol/bandchain-packet => github.com/EnigmasLab/bandchain-packet v0.0.4-0.20230327115226-35199d4659d5
-	github.com/cometbft/cometbft => github.com/EnigmasLab/cometbft v0.37.2-fury
-	github.com/cosmos/cosmos-sdk => github.com/EnigmasLab/cosmos-sdk v0.47.2-fury-4
-	github.com/cosmos/ibc-go/v7 => github.com/EnigmasLab/ibc-go/v7 v7.0.1-fury
+	cosmossdk.io/math => github.com/InjectiveLabs/cosmos-sdk/math v0.47.2-inj
+	github.com/CosmWasm/wasmd => github.com/InjectiveLabs/wasmd v0.40.0-inj
+	github.com/bandprotocol/bandchain-packet => github.com/InjectiveLabs/bandchain-packet v0.0.4-0.20230327115226-35199d4659d5
+	github.com/cometbft/cometbft => github.com/InjectiveLabs/cometbft v0.37.2-inj
+	github.com/cosmos/cosmos-sdk => github.com/InjectiveLabs/cosmos-sdk v0.47.2-inj-4
+	github.com/cosmos/ibc-go/v7 => github.com/InjectiveLabs/ibc-go/v7 v7.0.1-inj
 
-	github.com/miguelmota/go-ethereum-hdwallet => github.com/EnigmasLab/go-ethereum-hdwallet v0.1.2
+	github.com/miguelmota/go-ethereum-hdwallet => github.com/InjectiveLabs/go-ethereum-hdwallet v0.1.2
 	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 )

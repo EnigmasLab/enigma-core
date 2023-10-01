@@ -3,7 +3,7 @@ package keeper
 import (
 	"cosmossdk.io/errors"
 	sdkmath "cosmossdk.io/math"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"

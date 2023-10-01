@@ -12,7 +12,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	exchangetypes "github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/insurance/types"

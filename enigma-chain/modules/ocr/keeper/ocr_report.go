@@ -3,7 +3,7 @@ package keeper
 import (
 	"cosmossdk.io/errors"
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/ocr/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"

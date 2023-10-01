@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 )

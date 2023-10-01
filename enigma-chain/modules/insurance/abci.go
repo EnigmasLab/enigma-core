@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/insurance/keeper"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 func EndBlocker(ctx sdk.Context, k keeper.Keeper) {

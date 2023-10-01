@@ -7,7 +7,7 @@ import (
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/auction/types"
 	chaintypes "github.com/EnigmasLab/enigma-core/enigma-chain/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 var _ types.QueryServer = &Keeper{}

@@ -7,7 +7,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/pkg/errors"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	exchangetypes "github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/peggy/types"

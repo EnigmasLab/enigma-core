@@ -10,7 +10,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/peggy/types"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 const OutgoingTxBatchSize = 100

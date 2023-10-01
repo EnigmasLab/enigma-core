@@ -4,7 +4,7 @@ import (
 	abci "github.com/cometbft/cometbft/abci/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	auctiontypes "github.com/EnigmasLab/enigma-core/enigma-chain/modules/auction/types"
 	chaintypes "github.com/EnigmasLab/enigma-core/enigma-chain/types"

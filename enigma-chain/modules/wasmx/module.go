@@ -19,7 +19,7 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/spf13/cobra"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	exchangekeeper "github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/keeper"
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/wasmx/client/cli"

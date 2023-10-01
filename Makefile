@@ -132,9 +132,9 @@ mongo:
 ###############################################################################
 
 DOCKER=docker
-protoVer=0.12.1
-protoImageName=ghcr.io/cosmos/proto-builder:$(protoVer)
-protoImage=$(DOCKER) run --rm -v $(CURDIR):/workspace --workdir /workspace $(protoImageName)
+protoVer=v0.2
+protoImageName=tendermintdev/sdk-proto-gen:$(protoVer)
+containerProtoGen=teritori-proto-gen-$(protoVer)
 
 proto: proto-format proto-gen proto-swagger-gen
 

@@ -8,7 +8,7 @@ import (
 	insurancetypes "github.com/EnigmasLab/enigma-core/enigma-chain/modules/insurance/types"
 
 	"cosmossdk.io/errors"
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 

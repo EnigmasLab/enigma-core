@@ -8,7 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	log "github.com/xlab/suplog"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/peggy/keeper"
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/peggy/types"

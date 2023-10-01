@@ -23,7 +23,7 @@ import (
 	exchangekeeper "github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/keeper"
 	"github.com/EnigmasLab/enigma-core/enigma-chain/modules/exchange/types"
 
-	"github.com/EnigmasLab/metrics"
+	"github.com/InjectiveLabs/metrics"
 )
 
 // type check to ensure the interface is properly implemented
